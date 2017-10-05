@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Loading from '@/components/Loading'
 
 export default {
@@ -28,7 +27,7 @@ export default {
     }
   },
   created() {
-    axios.get('/api/movie/in_theaters', { city: "武汉" })
+    this.$http.get('/api/movie/in_theaters', { city: "武汉" })
       .then((res) => {
         if (res.data.start === 0) {
           this.hotMovieList = res.data.subjects;
@@ -57,7 +56,7 @@ li {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .item {

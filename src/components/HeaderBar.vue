@@ -1,10 +1,9 @@
 <template>
-  <mu-appbar title="豆瓣">
+  <mu-appbar title="Toxicfy">
 
     <mu-flat-button label="电影" slot="right" to='/movie' />
-    <mu-flat-button label="图书" slot="right" to='book'/>
-    <mu-flat-button label="广播" slot="right" />
-    <!-- <mu-flat-button label="小组" slot="right"/> -->
+    <mu-flat-button label="图书" slot="right" to='/article'/>
+    <mu-flat-button label="日志" slot="right" to= "/schedule" />
     <mu-icon-button icon="search" slot="right" />
   </mu-appbar>
 </template>

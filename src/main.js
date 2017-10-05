@@ -8,12 +8,15 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueLazyLoad from 'vue-lazyload'
+var infiniteScroll =  require('vue-infinite-scroll');
+
 
 Vue.use(MuseUI)
 
 Vue.use(axios); //使用axios，并设置vue的原型方法
 Vue.prototype.$http = axios
 
+Vue.use(infiniteScroll)
 Vue.use(VueLazyLoad,{
   // loading: "./assets/reLoading.png"
 })

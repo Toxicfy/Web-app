@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Loading from '@/components/Loading'
 export default {
   data() {
@@ -27,7 +26,7 @@ export default {
     }
   },
   created() {
-    axios.get('/api/movie/top250')
+    this.$http.get('/api/movie/top250')
       .then((res) => {
         if (res.data.start === 0) {
           this.topMovie = res.data.subjects;
@@ -56,7 +55,7 @@ li {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .item {

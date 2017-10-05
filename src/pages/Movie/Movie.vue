@@ -8,10 +8,14 @@
       </mu-bottom-nav>
     </mu-paper>
     <router-view></router-view>
+    <!-- <Footer></Footer> -->
+
   </div>
 </template>
 
 <script>
+// import Footer from '@/components/Footer'
+
 export default {
   name: 'hello',
   data() {

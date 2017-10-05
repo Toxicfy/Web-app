@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .footer {
-  margin: 5rem 0 3rem 0;
+  margin: 5rem 0 0 0;
   padding: 0 0 2rem 0;
   font-size: 1.1rem;
   text-align: center;

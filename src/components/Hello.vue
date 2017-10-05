@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <mu-paper :zDepth="2">
       <mu-appbar title=''>
         <mu-icon-button icon='menu' slot="left" />
@@ -46,7 +45,7 @@ export default {
     //         console.log(res.data.title);
     //         this
     //       }
-             
+
     //   })
   }
 };
