@@ -33,7 +33,7 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/api': '',
-        },
+        }
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

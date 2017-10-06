@@ -1,46 +1,40 @@
 <template>
   <div>
     <div class="article-list">
-      <h1>Image</h1>
-      <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+      <!-- <h1>Image</h1> -->
+      <!-- <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10"> -->
         <ul>
           <li v-for="item in articlelist" class="item">
             <img v-lazy="item.url" alt="文章图片" width="94%">
           </li>
         </ul>
-      </div>
+      <!-- </div> -->
+    </div>
+    <div class="loading-container" v-show="!articlelist.length">
+      <loading></loading>
     </div>
 
   </div>
 </template>
 
 <script>
+import Loading from '@/components/Loading'
 
 export default {
   data() {
     return {
       articlelist: [],
-      busy: false
+      // busy: false
     }
   },
   created() {
-    this.$http.get("http://gank.io/api/data/%E7%A6%8F%E5%88%A9/30/1")
+    this.$http.get("http://gank.io/api/data/%E7%A6%8F%E5%88%A9/50/1")
       .then((res) => {
         // this.filterData(res);
         this.articlelist = res.data.results;
       }).catch((e) => (alert(e)))
   },
   methods: {
-    loadMore: function() {
-      this.busy = true;
-
-      setTimeout(() => {
-        for (var i = 0, j = 10; i < j; i++) {
-          this.data.push({ name: count++ });
-        }
-        this.busy = false;
-      }, 1000);
-    }
     // filterData(res) {
     //   let dataArray = res.data.results;
     //   dataArray.forEach(function(ele) {
@@ -52,7 +46,9 @@ export default {
     //   }, this);
     // }
   },
-
+  components: {
+    Loading
+  }
 }
 </script>
 
@@ -82,6 +78,13 @@ ul {
   column-count: 2;
   column-gap: 0;
   list-style-type: none;
+  margin-top: 14px;
   padding: 0;
+}
+.loading-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%)
 }
 </style>

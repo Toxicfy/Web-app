@@ -4,19 +4,19 @@
     <div id="app">
       <router-view></router-view>
     </div>
-    <Footer></Footer>
+    <FooterLine></FooterLine>
   </div>
 </template>
 
 <script>
 import HeaderBar from '@/components/HeaderBar'
-import Footer from '@/components/Footer'
+import FooterLine from '@/components/FooterLine'
 
 export default {
   name: 'app',
   components:{
     HeaderBar,
-    Footer
+    FooterLine
   }
 }
 </script>
@@ -27,7 +27,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   min-height: 550px;
 }
