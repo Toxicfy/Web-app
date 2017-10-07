@@ -7,7 +7,9 @@
         <mu-bottom-nav-item value="nearby" title="即将上映" icon="location_on" to="/movie/recentMovie" />
       </mu-bottom-nav>
     </mu-paper>
-    <router-view></router-view>
+    <div class="movie">
+      <router-view></router-view>
+    </div>
     <!-- <Footer></Footer> -->
 
   </div>
@@ -34,6 +36,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.movie{
+  min-height: 500px;
+  text-align: center;
+  overflow: hidden;
+}
 h1,
 h2 {
   font-weight: normal;

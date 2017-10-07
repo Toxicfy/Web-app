@@ -1,18 +1,22 @@
 <template>
   <div>
-    <ul class="movie-list">
-      <li v-for="(item,index) in topMovie" class="item">
-        <router-link :to="{name: 'MovieSubject', params: { id: item.id}}">
-          <div class="icon">
-            <img v-lazy="item.images.medium" width="120" height="170">
-          </div>
-          <div class="text">
-            <h4 class="name">{{item.title}}</h4>
-            <p class="rate">评分：{{item.rating.average}}</p>
-          </div>
-        </router-link>
-      </li>
-    </ul>
+
+    <scroll :data="topMovie" class="scrolllist">
+      <ul class="movie-list">
+        <li v-for="(item,index) in topMovie" class="item">
+          <router-link :to="{name: 'MovieSubject', params: { id: item.id}}">
+            <div class="icon">
+              <img v-lazy="item.images.medium" width="120" height="170">
+            </div>
+            <div class="text">
+              <h4 class="name">{{item.title}}</h4>
+              <p class="rate">评分：{{item.rating.average}}</p>
+            </div>
+          </router-link>
+        </li>
+      </ul>
+    </scroll>
+
     <div class="loading-container" v-show="!topMovie.length">
       <loading></loading>
     </div>
@@ -20,7 +24,9 @@
 </template>
 
 <script>
+import Scroll from '@/components/Scroll'
 import Loading from '@/components/Loading'
+
 export default {
   data() {
     return {
@@ -41,7 +47,8 @@ export default {
       })
   },
   components: {
-    Loading
+    Loading,
+    Scroll
   },
   mounted() {
     // this.setPageId()
@@ -59,7 +66,9 @@ export default {
   box-sizing: border-box;
 }
 
-
+.scrolllist{
+  height: 550px;
+}
 .movie-list {
   width: 100%;
   display: flex;
@@ -78,8 +87,9 @@ export default {
   width: 100%;
   overflow: hidden;
 }
-h4{
-  color: #009688;  
+
+h4 {
+  color: #009688;
 }
 
 .loading-container {

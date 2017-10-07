@@ -39,8 +39,5 @@ export default new Router({
     path: '/movie/subject/:id',
     name: 'MovieSubject',
     component: MovieSubject,
-    meta: {
-      scrollToTop: true
-    }
   }]
 })
