@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    this.$http.get("http://gank.io/api/data/%E7%A6%8F%E5%88%A9/100/1")
+    this.$http.get("http://gank.io/api/data/%E7%A6%8F%E5%88%A9/200/1")
       .then((res) => {
         // this.filterData(res);
         this.articlelist = res.data.results;
