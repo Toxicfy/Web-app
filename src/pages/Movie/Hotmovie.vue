@@ -2,13 +2,17 @@
   <div>
     <ul class="movie-list">
       <li v-for="item in hotMovieList" class="item">
-        <div class="icon">
-          <img v-lazy="item.images.medium" width="120" height="170">
-        </div>
-        <div class="text">
-          <h4 class="name">{{item.title}}</h4>
-          <p class="rate">评分：{{item.rating.average}}</p>
-        </div>
+        <router-link :to="{name: 'MovieSubject', params: { id: item.id}}">
+
+          <div class="icon">
+            <img v-lazy="item.images.medium" width="120" height="170">
+          </div>
+          <div class="text">
+            <h4 class="name">{{item.title}}</h4>
+            <p class="rate">评分：{{item.rating.average}}</p>
+          </div>
+        </router-link>
+
       </li>
     </ul>
     <div class="loading-container" v-show="!hotMovieList.length">
@@ -45,11 +49,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-ul,
-li {
-  list-style: none;
 }
 
 .movie-list {

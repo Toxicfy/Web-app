@@ -59,10 +59,6 @@ export default {
   box-sizing: border-box;
 }
 
-ul,
-li {
-  list-style: none;
-}
 
 .movie-list {
   width: 100%;

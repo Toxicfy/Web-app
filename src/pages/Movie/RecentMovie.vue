@@ -2,16 +2,20 @@
   <div>
     <ul class="movie-list">
       <li v-for="item in resentMovie" class="item">
-        <div class="icon">
-          <img v-lazy="item.images.medium" width="120" height="170">
-        </div>
-        <div class="text">
-          <h4 class="name">{{item.title}}</h4>
-          <p class="rate">评分：{{item.rating.average}}</p>
-        </div>
+        <router-link :to="{name: 'MovieSubject', params: { id: item.id}}">
+
+          <div class="icon">
+            <img v-lazy="item.images.medium" width="120" height="170">
+          </div>
+          <div class="text">
+            <h4 class="name">{{item.title}}</h4>
+            <p class="rate">评分：{{item.rating.average}}</p>
+          </div>
+        </router-link>
+
       </li>
     </ul>
-        <div class="loading-container" v-show="!resentMovie.length">
+    <div class="loading-container" v-show="!resentMovie.length">
       <loading></loading>
     </div>
   </div>
@@ -34,7 +38,7 @@ export default {
         }
       })
   },
-  components:{
+  components: {
     Loading
   }
 }
@@ -47,28 +51,28 @@ export default {
   box-sizing: border-box;
 }
 
-ul,
-li {
-  list-style: none;
-}
-.movie-list{
+
+.movie-list {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.item{
+
+.item {
   width: 30%;
   margin: 10px 5px 0 5px;
   box-shadow: 0 0 1.5rem rgba(60, 60, 60, 0.1)
 }
-.text{
+
+.text {
   width: 100%;
   overflow: hidden;
 }
-.loading-container{
+
+.loading-container {
   position: absolute;
-  top:50%;
+  top: 50%;
   width: 100%;
   transform: translateY(-50%)
 }

@@ -14,7 +14,7 @@ import FooterLine from '@/components/FooterLine'
 
 export default {
   name: 'app',
-  components:{
+  components: {
     HeaderBar,
     FooterLine
   }
@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style>
-
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,5 +29,10 @@ export default {
   /* text-align: center; */
   color: #2c3e50;
   min-height: 550px;
+}
+
+ul,
+li {
+  list-style: none;
 }
 </style>
