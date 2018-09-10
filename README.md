@@ -5,7 +5,7 @@
 
 **预览图**
 
-![image](http://ovqjk8s4c.bkt.clouddn.com/web-app1.gif)
+![image](http://ovqjk8s4c.bkt.clouddn.com/web-app%E9%A2%84%E8%A7%88%E5%9B%BE.gif)
 ## 技术点
 
 - 基于`vue.js` 脚手架组件化开发，实现组件的复用；
